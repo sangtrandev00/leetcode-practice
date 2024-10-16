@@ -2,6 +2,11 @@
   "name": "leetcode",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "test": "bun test",
+    "debug:example": "bun run --inspect-brk name-file.ts",
+    "debug": "bun run --inspect-brk slide_window_pattern/longest-substring-without-repeating-characters/pattern-solution.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
