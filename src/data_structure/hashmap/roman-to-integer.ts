@@ -1,7 +1,4 @@
 
-
-
-// Chưa nắm vững nguyên tắc của sliding window!
 export function romanToInt(s: string): number {
     const mapRoman = new Map();
     mapRoman.set('I', 1);
