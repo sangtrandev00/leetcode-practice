@@ -35,5 +35,25 @@ export function triangleSymmetrical(number: number): string {
     return string
 }
 
+export function fibonacci(number: number): string {
+    // Implement your solution here
 
+    let string = ``
+
+    let a = 0;
+    let b = 1;
+    string = `${a},${b}`
+    let i = 0;
+    while (i < number - 2) {
+        let c = a + b;
+        a = b;
+        b = c;
+        string += `,${c}`
+        i++
+    }
+
+    return string
+}
+
+console.log(fibonacci(8));
 // console.log(`*\n**\n***\n`);

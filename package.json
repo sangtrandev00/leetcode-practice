@@ -5,6 +5,7 @@
   "scripts": {
     "test": "bun test",
     "debug:example": "bun run --inspect-brk name-file.ts",
+    "debug:test": "bun run --inspect-brk /Users/trannhatsang/Documents/Programming/NodeJS/leetcode_practice/src/codility/training/iteritor.ts",
     "debug": "bun run --inspect-brk slide_window_pattern/longest-substring-without-repeating-characters/pattern-solution.ts",
     "start:debug": "node --inspect -r ts-node/register src/index.ts"
   },

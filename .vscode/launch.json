@@ -1,16 +1,18 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-    
+  "version": "0.2.0",
+  "configurations": [
       {
-        "name": "Attach to Node",
-        "type": "node",
-        "request": "attach",
-        "port": 9229,
-        "restart": true,
-        "skipFiles": ["<node_internals>/**"],
-        "protocol": "inspector"
+          "type": "node",
+          "request": "launch",
+          "name": "Launch TypeScript",
+          "runtimeArgs": [
+              "-r",
+              "ts-node/register"
+          ],
+          "program": "${workspaceFolder}/src/codility/training/iteritor.ts",
+          "outFiles": [
+              "${workspaceFolder}/**/*.js"
+          ]
       }
-    ]
+  ]
 }
-  
