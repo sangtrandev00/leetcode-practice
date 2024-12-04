@@ -1,3 +1,5 @@
+// Pass 7 Testcase
+
 export function solution(X: number[], Y: number[]): number {
     // Implement your solution here
     // Max distance (8 - 1)

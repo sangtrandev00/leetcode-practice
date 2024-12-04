@@ -1,3 +1,5 @@
+
+// Pass 8 testcase!
 export function solution(P: number[], S: number[]): number {
     // Implement your solution here
     // Tìm tổng số người ở xe P
