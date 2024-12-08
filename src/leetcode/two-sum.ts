@@ -2,6 +2,9 @@ export function twoSum(nums: number[], target: number): number[] {
     let left = 0;
     let right = nums.length - 1;
 
+    // Kỹ thuật này có phải là kỹ thuật 2 con trỏ ?
+    // Các kỹ thuật hay gặp trong lập trình
+    // Chunking chia để trị, sliding window, con trỏ, tham lam, quy hoạch động, quay lui (backtracking), bruteforce
     while (left < right) {
         let sum = nums[left] + nums[right]
 

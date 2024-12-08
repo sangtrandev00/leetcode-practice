@@ -15,10 +15,11 @@ export function romanToInt(s: string): number {
     mapRoman.set('CD', 400);
     mapRoman.set('CM', 900);
 
-    let sum = 0
+    let sum = 0 // Cách giải này khá giống thuộc và nhớ bài quá! Làm sao phân tích một cách trơn tru hơn
     for (let i = 0; i < s.length;) {
         const index = s[i] + s[i + 1]
         let chars = ''
+        // Hiểu phương pháp làm của thuật toán này!
         if (mapRoman.get(index)) {
             sum += mapRoman.get(index)
             chars = index
