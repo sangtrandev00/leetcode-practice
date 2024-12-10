@@ -9,7 +9,7 @@ class Node {
     }
 }
 
-class Stack {
+export class Stack {
     top: any
     bottom: any
     length: number
