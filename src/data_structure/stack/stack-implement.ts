@@ -1,4 +1,3 @@
-import { LinkedList } from "../linkedList/reverseLinkedList";
 
 class Node {
     value: any

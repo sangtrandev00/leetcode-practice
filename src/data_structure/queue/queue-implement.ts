@@ -7,7 +7,7 @@ class Node {
     }
 }
 
-class Queue {
+export class Queue {
     // Dùng Single LinkedList là được rồi!
     first: any;
     last: any;
@@ -21,11 +21,11 @@ class Queue {
         return this.first
     }
     enqueue(value: any) {
+        const newNode = new Node(value)
         if (this.length === 0) {
-            this.first = new Node(value)
-            this.last = this.first
+            this.first = newNode
+            this.last = newNode
         } else {
-            const newNode = new Node(value)
             this.last.next = newNode
             this.last = newNode
         }
@@ -33,7 +33,12 @@ class Queue {
         return this.last
     }
     dequeue() {
+        if (!this.first) return null
         const holder = this.first
+        if (this.first == this.last) {
+            this.last = null // Special case (When there is only one element)
+        }
+
         this.first = this.first.next;
         this.length--
         return holder
