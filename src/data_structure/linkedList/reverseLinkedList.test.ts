@@ -5,6 +5,7 @@ describe('LinkedList', () => {
     let list: LinkedList;
 
     beforeEach(() => {
+        // Define things here!
         list = new LinkedList(10);
     });
 

@@ -5,7 +5,7 @@ export class LinkedList {
     tail: any
     length: number
 
-    constructor(value: number) {
+    constructor(value: any) {
         this.head = {
             value: value,
             next: null,
@@ -13,7 +13,7 @@ export class LinkedList {
         this.tail = this.head;
         this.length = 1;
     }
-    append(value: number) {
+    append(value: any) {
         const newNode = {
             value: value,
             next: null,
@@ -24,7 +24,7 @@ export class LinkedList {
         this.length++;
         return this;
     }
-    prepend(value: number) {
+    prepend(value: any) {
         const newNode = {
             value: value,
             next: null,
@@ -43,7 +43,7 @@ export class LinkedList {
         }
         return array;
     }
-    insert(index: number, value: number) {
+    insert(index: number, value: any) {
         //Check for proper parameters;
         if (index >= this.length) {
             console.log("yes");
@@ -85,6 +85,8 @@ export class LinkedList {
         if (!this.head.next) {
             return this.head;
         }
+
+        // Cái này có phải kỹ thuạt 2 con trỏ hay không ?
         let first = this.head;
         this.tail = this.head;
         let second = first.next;
@@ -96,7 +98,8 @@ export class LinkedList {
             second = temp;
         }
 
-        this.head.next = null;
+        // this.head.next = null; // Tác động lên đuôi tail .next = null
+        this.tail.next = null; // Tác động lên đuôi tail .next = null
         this.head = first;
         return this.printList();
     }
