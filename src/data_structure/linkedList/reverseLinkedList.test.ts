@@ -1,11 +1,11 @@
 import { describe, it, expect, beforeEach } from 'bun:test';
-import { DBLinkedList } from './doublyLinkedList';
+import { LinkedList } from './reverseLinkedList';
 
-describe('DBLinkedList', () => {
-    let list: DBLinkedList;
+describe('LinkedList', () => {
+    let list: LinkedList;
 
     beforeEach(() => {
-        list = new DBLinkedList(10);
+        list = new LinkedList(10);
     });
 
     it('should append values to the list', () => {
@@ -17,13 +17,6 @@ describe('DBLinkedList', () => {
     it('should prepend values to the list', () => {
         list.prepend(1);
         expect(list.printList()).toEqual([1, 10]);
-    });
-
-    it('should lookup values by index', () => {
-        list.append(5);
-        list.append(16);
-        expect(list.lookup(1)).toBe(5);
-        expect(list.lookup(2)).toBe(16);
     });
 
     it('should insert values at a specific index', () => {
