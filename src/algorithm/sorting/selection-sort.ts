@@ -5,18 +5,16 @@ export function selectionSort(array: number[]) {
     //Code Here
     const length = array.length
     for (let i = 0; i < length; i++) {
-        let minItem = array[i]
         let minIndex = i
         for (let j = i + 1; j < length; j++) {
-            if (array[j] < minItem) {
-                minItem = array[j]
+            if (array[j] < array[minIndex]) {
                 minIndex = j
             }
         }
         // Swap the found minimum element with the first element
         if (i !== minIndex) {
             let temp = array[i]
-            array[i] = minItem
+            array[i] = array[minIndex] // Thừa
             array[minIndex] = temp
         }
     }
@@ -27,17 +25,15 @@ export function selectionSortCallback(array: number[], callback: (a: number, b: 
     //Code Here
     const length = array.length
     for (let i = 0; i < length; i++) {
-        let item = array[i]
         let index = i
         for (let j = i + 1; j < length; j++) {
-            if (callback(array[j], item) < 0) {
-                item = array[j]
+            if (callback(array[j], array[index]) < 0) {
                 index = j
             }
         }
         if (index !== i) {
             let temp = array[i]
-            array[i] = item
+            array[i] = array[index]
             array[index] = temp
         }
     }
