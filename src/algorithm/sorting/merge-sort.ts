@@ -1,7 +1,8 @@
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
+
 export function mergeSort(array: number[]): number[] {
-    // Stop point
+    // Stop point (case)
     if (array.length <= 1) {
         return array
     }
@@ -11,10 +12,13 @@ export function mergeSort(array: number[]): number[] {
     const middle = Math.floor(length / 2);
     const left = array.slice(0, middle)
     const right = array.slice(middle)
+    console.log("left", left);
+    console.log("right", right)
 
-    // Recursive point
+    // Recursive point (recursive case)
+    // Mỗi lần merge thì mất n 
     return merge(
-        mergeSort(left),
+        mergeSort(left), // Chia đôi chiều dài của mảng để mảng đạt 1 phần tử tốn logN thời gian (logN lần lặp => Ví dụ mảng có 256 phần tử => Tốn log256 => tốn 8 lần chạy của hàm )
         mergeSort(right)
     )
 }
@@ -40,6 +44,7 @@ export function merge(left: number[], right: number[]) {
             rightIndex++;
         }
     }
+    console.log(left, right);
 
     return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
 }
