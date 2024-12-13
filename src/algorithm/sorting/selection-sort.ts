@@ -14,9 +14,11 @@ export function selectionSort(array: number[]) {
             }
         }
         // Swap the found minimum element with the first element
-        let temp = array[i]
-        array[i] = minItem
-        array[minIndex] = temp
+        if (i !== minIndex) {
+            let temp = array[i]
+            array[i] = minItem
+            array[minIndex] = temp
+        }
     }
     return array
 }
