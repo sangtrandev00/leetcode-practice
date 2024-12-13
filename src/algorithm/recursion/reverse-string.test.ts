@@ -13,8 +13,8 @@ function reverseStringRecursive(str: string): string {
 
     // return Điểm dừng
     if (str.length == 0) return ""
-    // Return value (Recursive)
 
+    // Return value (Recursive)
     return str[str.length - 1] + reverseStringRecursive(str.slice(0, str.length - 1))
 }
 
