@@ -175,6 +175,70 @@ export class BinarySearchTree {
         // Recursive case
         return this.breathFirstSearchRecursive(queue, list)
     }
+
+    DFSInorder() {
+        return this.traverseInOrder(this.root, [])
+    }
+
+    DFSPreorder() {
+        return this.traversePreOrder(this.root, [])
+    }
+    DFSPostorder() {
+        return this.traversePostOrder(this.root, [])
+    }
+
+    //     9
+    //  4     20
+    //1  6  15  170
+    // InOrder - Left -> Root -> Right: [1, 4, 6, 9, 15, 20, 170]
+    traverseInOrder(node: any, list: number[]) { // Đều sử dụng cấu trúc dữ liệu stack. Function nào gọi sau -> thì thực hiện trước!
+
+        console.log(node.value);
+        console.log(list);
+        // Recursive case:
+        if (node.left) {
+            this.traverseInOrder(node.left, list)
+        }
+        list.push(node.value)
+        if (node.right) {
+            this.traverseInOrder(node.right, list)
+        }
+        // Base case ?
+        return list
+    }
+
+    // PreOrder - Root -> Left -> Right: [9, 4, 1, 6, 20, 15, 170]
+    traversePreOrder(node: any, list: number[]) { // Đều sử dụng cấu trúc dữ liệu stack. Function nào gọi sau -> thì thực hiện trước!
+        console.log(node.value);
+        console.log(list);
+        list.push(node.value)
+        // Recursive case:
+        if (node.left) {
+            this.traversePreOrder(node.left, list)
+        }
+        if (node.right) {
+            this.traversePreOrder(node.right, list)
+        }
+
+        // Base case ?
+        return list
+    }
+
+    traversePostOrder(node: any, list: number[]) { // Đều sử dụng cấu trúc dữ liệu stack. Function nào gọi sau -> thì thực hiện trước!
+        console.log(node.value);
+        console.log(list);
+        // Recursive case:
+        if (node.left) {
+            this.traversePostOrder(node.left, list)
+        }
+        if (node.right) {
+            this.traversePostOrder(node.right, list)
+        }
+        list.push(node.value)
+        // Base case ?
+        return list // Space complexity -> O(h) h: là chiều cao của cây nhị phân
+    }
+
 }
 
 //     9
@@ -182,7 +246,7 @@ export class BinarySearchTree {
 //1  6  15  170
 // InOrder - Left -> Root -> Right: [1, 4, 6, 9, 15, 20, 170]
 // PreOrder - Root -> Left -> Right: [9, 4, 1, 6, 20, 15, 170]
-// PostOrder - Left -> Right -> Root: [9, 15, 6, 20, 170, 1, 4]
+// PostOrder - Left -> Right -> Root: [1, 4, 6, 9, 15, 20, 170]
 
 const tree = new BinarySearchTree();
 tree.insert(9);
@@ -192,11 +256,14 @@ tree.insert(20);
 tree.insert(170);
 tree.insert(15);
 tree.insert(1);
-tree.remove(170);
+// tree.remove(170);
 // JSON.stringify(traverse(tree.root));
 // console.log(tree.lookup(20));
-console.log(tree.breathFirstSearch());
-console.log(tree.breathFirstSearchRecursive([tree.root], []));
+// console.log(tree.breathFirstSearch());
+// console.log(tree.breathFirstSearchRecursive([tree.root], []));
+// console.log(tree.DFSInorder());
+// console.log(tree.DFSPreorder());
+console.log(tree.DFSPostorder());
 function traverse(node: Node | null) {
     if (!node) return null
     const tree: Node | null = { value: node.value, left: null, right: null };
