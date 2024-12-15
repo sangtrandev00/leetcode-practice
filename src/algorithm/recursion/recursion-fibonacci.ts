@@ -22,7 +22,8 @@ export function fibonacciIterative(n: number) {
         i++ // 3, 4, 5, 6, 7
     }
     return sum
-
+    // O(n): Time complexity
+    // O(1): Space complexity
 }
 
 console.log('fibonacciIterative(6)', fibonacciIterative(100));
