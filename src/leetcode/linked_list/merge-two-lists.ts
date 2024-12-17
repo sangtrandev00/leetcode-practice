@@ -23,7 +23,7 @@ export class ListNode {
 // Space complexity O(n + m)
 export function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
     if (list1 == null) return list2
-    if (list2 == null) return list1
+    if (list2 == null) return list1 // Corner case
 
 
     let node: ListNode | null = {
@@ -60,4 +60,4 @@ export function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): L
 
 const list1 = new ListNode(1, new ListNode(2, new ListNode(4, null)))
 const list2 = new ListNode(1, new ListNode(3, new ListNode(4, null)))
-console.log("mergeTwoLists(list1, list2)", mergeTwoLists(list1, list2));
+console.log("mergeTwoLists(list1, list2)", mergeTwoLists(list1, list2)); // Nếu 2 danh sách không được sắp xếp thì sao ?
