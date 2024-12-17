@@ -246,7 +246,7 @@ export class BinarySearchTree {
 //1  6  15  170
 // InOrder - Left -> Root -> Right: [1, 4, 6, 9, 15, 20, 170]
 // PreOrder - Root -> Left -> Right: [9, 4, 1, 6, 20, 15, 170]
-// PostOrder - Left -> Right -> Root: [1, 4, 6, 9, 15, 20, 170]
+// PostOrder - Left -> Right -> Root: [1, 6, 4, 15, 170, 20, 9]
 
 const tree = new BinarySearchTree();
 tree.insert(9);
