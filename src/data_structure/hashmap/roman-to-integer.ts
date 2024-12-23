@@ -33,7 +33,7 @@ export function romanToInt(s: string): number {
     return sum
 };
 
-
+// Space O(1), Time O(n)
 romanToInt("III");
 romanToInt("LVIII");
 romanToInt("MCMXCIV");
