@@ -1,7 +1,7 @@
 export function addBinary(a: string, b: string): string {
     if (a.length == 0) return b
     if (b.length == 0) return a
-    if (a.length && b.length == 0) return '0'
+    if (a.length == 0 && b.length == 0) return '0'
     let sum = ''
     let carry = 0
     // 1010
