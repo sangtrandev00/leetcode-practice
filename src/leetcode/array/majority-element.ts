@@ -5,5 +5,24 @@ export function majorityElement(nums: number[]): number {
     return Math.floor(nums[Math.floor(nums.length / 2)])
 };
 
+export function majorityElementV2(nums: number[]): number {
+    if (nums.length == 0) return -1
 
-console.log("major element: ", majorityElement([3, 3, 3, 4, 2]))
+    const dict: Map<number, number> = new Map<number, number>()
+    for (let i = 0; i < nums.length; i++) {
+        if (dict.has(nums[i])) {
+            const occurs = dict.get(nums[i]) as number + 1
+            if (occurs > nums.length / 2) {
+                return nums[i]
+            }
+            dict.set(nums[i], occurs)
+
+        } else {
+            dict.set(nums[i], 1)
+        }
+    }
+    return nums[0] // Timecomplexity O(n), SpaceComplexity O(number)
+
+};
+
+console.log("major element: ", majorityElementV2([3, 3, 3, 4, 2]))
